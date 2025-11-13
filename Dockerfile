@@ -29,8 +29,7 @@ RUN npm ci --only=production && \
     npm cache clean --force
 
 # Copy built application from build stage
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/build ./build
+COPY --from=build /app/dist/build ./dist/build
 COPY --from=build /app/public ./public
 COPY --from=build /app/config ./config
 COPY --from=build /app/database ./database
