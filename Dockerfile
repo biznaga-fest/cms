@@ -29,12 +29,9 @@ RUN npm ci --only=production && \
     npm cache clean --force
 
 # Copy built application from build stage
-COPY --from=build /app/dist/build ./dist/build
+COPY --from=build /app/dist ./dist
 COPY --from=build /app/public ./public
-COPY --from=build /app/config ./config
 COPY --from=build /app/database ./database
-COPY --from=build /app/src ./src
-COPY --from=build /app/tsconfig.json ./tsconfig.json
 COPY --from=build /app/favicon.png ./favicon.png
 
 # Create non-root user
