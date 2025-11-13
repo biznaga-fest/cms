@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsors",
+  "info": {
+    "singularName": "sponsor",
+    "pluralName": "sponsors",
+    "displayName": "Sponsor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "platinum",
+        "gold",
+        "silver",
+        "bronze",
+        "communitySponsor",
+        "media",
+        "food",
+        "community",
+        "supporter"
+      ]
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "has_featured_page": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "socials.socials"
+    },
+    "job_offers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sponsors.job-offer"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

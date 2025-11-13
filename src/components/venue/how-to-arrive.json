@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_venue_how_to_arrives",
+  "info": {
+    "displayName": "How To Arrive",
+    "icon": "car-side"
+  },
+  "options": {},
+  "attributes": {
+    "by_bus": {
+      "type": "richtext"
+    },
+    "by_bike": {
+      "type": "richtext"
+    },
+    "by_subway": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "kind": "singleType",
+  "collectionName": "infos",
+  "info": {
+    "singularName": "info",
+    "pluralName": "infos",
+    "displayName": "Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "tickets_url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "socials.socials",
+      "required": true
+    },
+    "venue": {
+      "type": "component",
+      "repeatable": false,
+      "component": "venue.venue",
+      "required": true
+    },
+    "sponsors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor.sponsor"
+    },
+    "sponsor_dossier": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sponsors.dossier",
+      "required": true
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ticket.ticket"
+    },
+    "last_edition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "last-edition.last-edition",
+      "required": false
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq-entry"
+    },
+    "footer_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.footer-link",
+      "required": true
+    },
+    "is_welcome_banner_enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "call_for_papers": {
+      "type": "component",
+      "repeatable": false,
+      "component": "speakers.call-for-papers"
+    },
+    "previous_editions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "last-edition.previous-edition"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "staff.team-member"
+    },
+    "events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "speakers.speaker-event",
+      "required": true
+    },
+    "CompanyTicketsNotice": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tickets.company-tickets-notice",
+      "required": true
+    },
+    "schedule": {
+      "type": "component",
+      "repeatable": true,
+      "component": "schedule.schedule-event"
+    },
+    "hall_of_fame": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hall-of-fame.hall-of-fame-item"
+    },
+    "raffles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "raffles.raffle"
+    },
+    "tshirt": {
+      "type": "component",
+      "repeatable": false,
+      "component": "tickets.tshirt"
+    },
+    "hosts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::host.host"
+    }
+  }
+}

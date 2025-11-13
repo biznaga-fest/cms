@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_tickets_perks",
+  "info": {
+    "displayName": "Perk",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

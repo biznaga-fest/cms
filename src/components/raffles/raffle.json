@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_raffles_raffles",
+  "info": {
+    "displayName": "raffle",
+    "icon": "dice-d6"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

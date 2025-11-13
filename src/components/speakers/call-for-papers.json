@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_speakers_call_for_papers",
+  "info": {
+    "displayName": "Call For Papers",
+    "icon": "child",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "is_enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "C4P Is Open!",
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

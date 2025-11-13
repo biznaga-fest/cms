@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sponsors_job_offers",
+  "info": {
+    "displayName": "Job Offer",
+    "icon": "briefcase",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

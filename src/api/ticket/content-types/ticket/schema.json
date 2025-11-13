@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "float",
+      "default": 0,
+      "required": true
+    },
+    "is_sold_out": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "notice": {
+      "type": "string",
+      "required": false
+    },
+    "perks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tickets.perk"
+    }
+  }
+}

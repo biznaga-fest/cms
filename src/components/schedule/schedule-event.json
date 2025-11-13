@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_schedule_schedule_events",
+  "info": {
+    "displayName": "ScheduleEvent",
+    "icon": "at",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["lecture", "workshop"]
+    },
+    "time_start": {
+      "type": "string",
+      "required": true
+    },
+    "time_end": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["break", "nobreak"]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "language": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    }
+  }
+}

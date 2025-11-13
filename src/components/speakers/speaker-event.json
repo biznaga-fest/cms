@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_speakers_speaker_events",
+  "info": {
+    "displayName": "Speaker Event",
+    "icon": "comment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "lecture",
+        "workshop"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "place": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker"
+    },
+    "duration_in_minutes": {
+      "type": "integer"
+    }
+  }
+}

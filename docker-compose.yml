@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    container_name: biznagafest-cms
+    environment:
+      POSTGRES_DB: biznagafest-cms
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: Test1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgresdata:

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_tickets_company_tickets_notices",
+  "info": {
+    "displayName": "CompanyTicketsNotice",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

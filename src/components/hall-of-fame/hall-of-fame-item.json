@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_hall_of_fame_hall_of_fame_items",
+  "info": {
+    "displayName": "HallOfFameItem",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "edition": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

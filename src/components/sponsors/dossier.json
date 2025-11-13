@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sponsors_dossiers",
+  "info": {
+    "displayName": "Dossier",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "spanish": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "english": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "is_enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_tickets_tshirts",
+  "info": {
+    "displayName": "Tshirt",
+    "icon": "user-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ],
+      "required": true
+    },
+    "asset": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_staff_team_members",
+  "info": {
+    "displayName": "Team Member",
+    "icon": "grin",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "organizer",
+        "staff"
+      ],
+      "required": true,
+      "default": "staff"
+    },
+    "position": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "socials.socials"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

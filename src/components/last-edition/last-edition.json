@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_last_edition_last_editions",
+  "info": {
+    "displayName": "Last Edition",
+    "icon": "arrow-left"
+  },
+  "options": {},
+  "attributes": {
+    "video_url": {
+      "type": "text"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

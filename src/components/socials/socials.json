@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_socials_socials",
+  "info": {
+    "displayName": "Socials",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "twitter": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "mastodon": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "devto": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    }
+  }
+}

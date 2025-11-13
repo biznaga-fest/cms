@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_faq_faq_entries",
+  "info": {
+    "displayName": "FAQ Entry",
+    "icon": "bullhorn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

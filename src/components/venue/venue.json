@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_venue_venues",
+  "info": {
+    "displayName": "Venue",
+    "icon": "building",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "map_url": {
+      "type": "text",
+      "required": true
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "how_to_arrive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "venue.how-to-arrive",
+      "required": true
+    }
+  }
+}

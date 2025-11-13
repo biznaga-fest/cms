@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_last_edition_previous_editions",
+  "info": {
+    "displayName": "Previous Edition",
+    "icon": "undo-alt"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
