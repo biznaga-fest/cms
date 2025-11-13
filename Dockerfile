@@ -1,52 +1,30 @@
-# Build stage
+# Creating multi-stage build for production
 FROM node:20-alpine AS build
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci
-
-# Copy source code
+WORKDIR /opt/
+COPY package.json package-lock.json ./
+RUN npm install -g node-gyp
+RUN npm config set fetch-retry-maxtimeout 600000 -g && npm ci
+ENV PATH=/opt/node_modules/.bin:$PATH
+WORKDIR /opt/app
 COPY . .
-
-# Set environment to production and build
-ENV NODE_ENV=production
 RUN npm run build
 
-# Production stage
+# Creating final production image
 FROM node:20-alpine
+RUN apk add --no-cache vips-dev
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+WORKDIR /opt/
+COPY --from=build /opt/node_modules ./node_modules
+WORKDIR /opt/app
+COPY --from=build /opt/app ./
+ENV PATH=/opt/node_modules/.bin:$PATH
 
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install production dependencies only
-RUN npm ci --only=production && \
-    npm cache clean --force
-
-# Copy built application from build stage
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/public ./public
-COPY --from=build /app/database ./database
-COPY --from=build /app/favicon.png ./favicon.png
-
-# Create non-root user
-RUN addgroup -g 1001 -S strapi && \
-    adduser -S strapi -u 1001 && \
-    chown -R strapi:strapi /app
-
-USER strapi
-
-# Expose Strapi port
+RUN chown -R node:node /opt/app
+USER node
 EXPOSE 1337
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD node -e "require('http').get('http://localhost:1337/_health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
-
-# Start Strapi
 CMD ["npm", "run", "start"]
