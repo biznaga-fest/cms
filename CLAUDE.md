@@ -38,6 +38,7 @@ docker-compose up -d
 ### Core Structure
 
 - **config/** - Environment-based configuration files
+
   - `database.ts` - Multi-database support (SQLite/PostgreSQL/MySQL) with SSL configuration
   - `server.ts` - Server configuration (host, port, app keys)
   - `middlewares.ts` - Standard Strapi middleware stack
@@ -47,12 +48,15 @@ docker-compose up -d
 
 - **src/index.ts** - Application entry point with `register()` and `bootstrap()` lifecycle hooks
 
-- **src/api/** - Content type collections (auto-generated structure)
-  - Each API follows pattern: `{name}/content-types/{name}/schema.json`
+- **src/api/** - Content type collections
+
+  - Each API requires: controllers, services, routes (TypeScript), and schema (JSON)
+  - Structure: `{name}/content-types/{name}/schema.json`, `{name}/controllers/{name}.ts`, `{name}/services/{name}.ts`, `{name}/routes/{name}.ts`
   - Current APIs: host, info, speaker, sponsor, ticket
   - Schemas define collectionTypes with attributes, media relations, and components
 
 - **src/components/** - Reusable content type components
+
   - Organized by domain: faq, footer, hall-of-fame, last-edition, raffles, schedule, socials, speakers, sponsors, staff, tickets, venue
   - Each component has a JSON schema file defining structure
   - Components can be referenced in content type schemas
@@ -62,6 +66,7 @@ docker-compose up -d
 ### Database Configuration
 
 Database client selected via `DATABASE_CLIENT` env var (defaults to sqlite). Connection details configured per client type:
+
 - PostgreSQL: Uses `DATABASE_URL` or individual connection params
 - MySQL: Standard connection parameters
 - SQLite: File-based storage in `.tmp/data.db`
@@ -71,6 +76,7 @@ All configs support SSL with certificate options and connection pooling.
 ### Environment Variables
 
 Required in `.env` (see `.env.example`):
+
 - `HOST`, `PORT` - Server binding
 - `APP_KEYS` - Comma-separated session keys
 - `API_TOKEN_SALT`, `ADMIN_JWT_SECRET`, `TRANSFER_TOKEN_SALT`, `JWT_SECRET` - Security tokens
@@ -88,6 +94,7 @@ Required in `.env` (see `.env.example`):
 ### Content Type Patterns
 
 **Collection Types** (e.g., Host):
+
 ```json
 {
   "kind": "collectionType",
@@ -103,6 +110,7 @@ Required in `.env` (see `.env.example`):
 ```
 
 **Components** (e.g., Tshirt):
+
 ```json
 {
   "collectionName": "components_tickets_tshirts",
@@ -115,10 +123,42 @@ Required in `.env` (see `.env.example`):
 
 ## Adding New Content Types
 
-1. Create folder structure: `src/api/{name}/content-types/{name}/`
-2. Add `schema.json` with collectionType definition
-3. Strapi auto-generates controllers, services, and routes on server restart
-4. For reusable structures, create components in `src/components/{domain}/`
+1. Create folder structure:
+
+   ```
+   src/api/{name}/
+   ├── content-types/{name}/schema.json
+   ├── controllers/{name}.ts
+   ├── services/{name}.ts
+   └── routes/{name}.ts
+   ```
+
+2. Create `schema.json` with collectionType definition (see Content Type Patterns above)
+
+3. Create controller file (`controllers/{name}.ts`):
+
+   ```typescript
+   import { factories } from "@strapi/strapi";
+   export default factories.createCoreController("api::{name}.{name}");
+   ```
+
+4. Create service file (`services/{name}.ts`):
+
+   ```typescript
+   import { factories } from "@strapi/strapi";
+   export default factories.createCoreService("api::{name}.{name}");
+   ```
+
+5. Create routes file (`routes/{name}.ts`):
+
+   ```typescript
+   import { factories } from "@strapi/strapi";
+   export default factories.createCoreRouter("api::{name}.{name}");
+   ```
+
+6. Restart Strapi server to register the new content type
+
+For reusable structures, create components in `src/components/{domain}/`
 
 ## Adding New Components
 
