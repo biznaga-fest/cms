@@ -3,7 +3,7 @@ services:
     image: postgres
     container_name: biznagafest-cms
     environment:
-      POSTGRES_DB: biznagafest-cms
+      POSTGRES_DB: cms
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: Test1234
     ports:
