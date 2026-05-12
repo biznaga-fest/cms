@@ -17,6 +17,21 @@
       "relation": "oneToMany",
       "target": "api::speaker.speaker"
     },
+    "sponsors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor.sponsor"
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ticket.ticket"
+    },
+    "hosts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::host.host"
+    },
     "title": {
       "type": "string",
       "required": true
@@ -34,105 +49,90 @@
     },
     "socials": {
       "type": "component",
-      "repeatable": false,
       "component": "socials.socials",
+      "repeatable": false,
       "required": true
     },
     "venue": {
       "type": "component",
-      "repeatable": false,
       "component": "venue.venue",
+      "repeatable": false,
       "required": true
-    },
-    "sponsors": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sponsor.sponsor"
     },
     "sponsor_dossier": {
       "type": "component",
-      "repeatable": false,
       "component": "sponsors.dossier",
+      "repeatable": false,
       "required": true
-    },
-    "tickets": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::ticket.ticket"
     },
     "last_edition": {
       "type": "component",
-      "repeatable": false,
       "component": "last-edition.last-edition",
+      "repeatable": false,
       "required": false
     },
     "faq": {
       "type": "component",
-      "repeatable": true,
-      "component": "faq.faq-entry"
+      "component": "faq.faq-entry",
+      "repeatable": true
     },
     "footer_links": {
       "type": "component",
-      "repeatable": true,
       "component": "footer.footer-link",
+      "repeatable": true,
       "required": true
     },
     "is_welcome_banner_enabled": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     },
     "call_for_papers": {
       "type": "component",
-      "repeatable": false,
-      "component": "speakers.call-for-papers"
+      "component": "speakers.call-for-papers",
+      "repeatable": false
     },
     "previous_editions": {
       "type": "component",
-      "repeatable": true,
-      "component": "last-edition.previous-edition"
+      "component": "last-edition.previous-edition",
+      "repeatable": true
     },
     "team": {
       "type": "component",
-      "repeatable": true,
-      "component": "staff.team-member"
+      "component": "staff.team-member",
+      "repeatable": true
     },
     "events": {
       "type": "component",
-      "repeatable": true,
       "component": "speakers.speaker-event",
-      "required": true
+      "repeatable": true,
+      "required": false
     },
     "CompanyTicketsNotice": {
       "type": "component",
-      "repeatable": false,
       "component": "tickets.company-tickets-notice",
+      "repeatable": false,
       "required": true
     },
     "schedule": {
       "type": "component",
-      "repeatable": true,
-      "component": "schedule.schedule-event"
+      "component": "schedule.schedule-event",
+      "repeatable": true
     },
     "hall_of_fame": {
       "type": "component",
-      "repeatable": true,
-      "component": "hall-of-fame.hall-of-fame-item"
+      "component": "hall-of-fame.hall-of-fame-item",
+      "repeatable": true
     },
     "raffles": {
       "type": "component",
-      "repeatable": true,
-      "component": "raffles.raffle"
+      "component": "raffles.raffle",
+      "repeatable": true
     },
     "tshirt": {
       "type": "component",
-      "repeatable": false,
-      "component": "tickets.tshirt"
-    },
-    "hosts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::host.host"
+      "component": "tickets.tshirt",
+      "repeatable": false
     }
   }
 }

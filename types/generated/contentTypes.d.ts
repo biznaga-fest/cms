@@ -486,8 +486,7 @@ export interface ApiInfoInfo extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
-    events: Schema.Attribute.Component<'speakers.speaker-event', true> &
-      Schema.Attribute.Required;
+    events: Schema.Attribute.Component<'speakers.speaker-event', true>;
     faq: Schema.Attribute.Component<'faq.faq-entry', true>;
     footer_links: Schema.Attribute.Component<'footer.footer-link', true> &
       Schema.Attribute.Required;
