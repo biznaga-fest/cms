@@ -9,6 +9,9 @@ const buildDeepPopulate = (uid: string) => {
   const populate: Record<string, any> = {};
 
   for (const [name, attr] of Object.entries(attributes) as [string, any][]) {
+    if (attr.private) continue;
+    if (attr.type === "relation" && attr.target === "admin::user") continue;
+
     if (
       attr.type === "relation" ||
       attr.type === "media" ||
