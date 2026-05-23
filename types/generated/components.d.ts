@@ -83,7 +83,7 @@ export interface ScheduleScheduleEvent extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
-    kind: Schema.Attribute.Enumeration<['break', 'nobreak']>;
+    kind: Schema.Attribute.Enumeration<['break', 'nobreak', 'half-divider']>;
     language: Schema.Attribute.String;
     location: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;

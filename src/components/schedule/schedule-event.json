@@ -15,7 +15,10 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": ["lecture", "workshop"]
+      "enum": [
+        "lecture",
+        "workshop"
+      ]
     },
     "time_start": {
       "type": "string",
@@ -29,7 +32,11 @@
     },
     "kind": {
       "type": "enumeration",
-      "enum": ["break", "nobreak"]
+      "enum": [
+        "break",
+        "nobreak",
+        "half-divider"
+      ]
     },
     "title": {
       "type": "string",
