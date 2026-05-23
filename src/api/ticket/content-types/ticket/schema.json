@@ -18,13 +18,13 @@
     },
     "price": {
       "type": "float",
-      "default": 0,
-      "required": true
+      "required": true,
+      "default": 0
     },
     "is_sold_out": {
       "type": "boolean",
-      "default": false,
-      "required": true
+      "required": true,
+      "default": false
     },
     "notice": {
       "type": "string",
@@ -32,8 +32,16 @@
     },
     "perks": {
       "type": "component",
-      "repeatable": true,
-      "component": "tickets.perk"
+      "component": "tickets.perk",
+      "repeatable": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
