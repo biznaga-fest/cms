@@ -273,6 +273,7 @@ export interface VenueVenue extends Struct.ComponentSchema {
     description: Schema.Attribute.RichText;
     how_to_arrive: Schema.Attribute.Component<'venue.how-to-arrive', false> &
       Schema.Attribute.Required;
+    map_address: Schema.Attribute.String & Schema.Attribute.Required;
     map_url: Schema.Attribute.Text & Schema.Attribute.Required;
     pictures: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
