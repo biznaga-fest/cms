@@ -7,27 +7,11 @@
   },
   "options": {},
   "attributes": {
-    "subtitle": {
-      "type": "string"
-    },
-    "description": {
-      "type": "richtext"
-    },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "lecture",
-        "workshop"
-      ]
-    },
-    "time_start": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "time_end": {
-      "type": "string"
-    },
-    "location": {
+    "subtitle": {
       "type": "string"
     },
     "kind": {
@@ -38,9 +22,26 @@
         "half-divider"
       ]
     },
-    "title": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "lecture",
+        "workshop",
+        "round-table"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "time_start": {
       "type": "string",
       "required": true
+    },
+    "time_end": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
     },
     "language": {
       "type": "string"

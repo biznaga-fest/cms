@@ -91,7 +91,7 @@ export interface ScheduleScheduleEvent extends Struct.ComponentSchema {
     time_start: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     topic: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['lecture', 'workshop']>;
+    type: Schema.Attribute.Enumeration<['lecture', 'workshop', 'round-table']>;
   };
 }
 
